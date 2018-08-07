@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require 'bundler/setup'
+require 'cron_parser'
+
+CronParser::Main.new.execute
