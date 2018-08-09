@@ -1,6 +1,7 @@
 require 'pry'
 require 'cron_parser/argument_parser'
 require 'cron_parser/expression_parser'
+require 'cron_parser/table_printer'
 
 module CronParser
   class Main
@@ -11,7 +12,7 @@ module CronParser
     end
 
     def execute
-      puts expression_parser.parse
+      print_table!
     end
 
     private
@@ -20,8 +21,12 @@ module CronParser
       ::CronParser::ArgumentParser.parse(arguments)
     end
 
-    def expression_parser
-      @expression_parser ||= ::CronParser::ExpressionParser.new(parsed_arguments.dig(:expression))
+    def parsed_expression
+      ::CronParser::ExpressionParser.new(parsed_arguments.dig(:expression)).parse
+    end
+
+    def print_table!
+      ::CronParser::TablePrinter.new(parsed_expression).print
     end
   end
 end

@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     cron_parser (1.0.0)
+      terminal-table
 
 GEM
   remote: https://rubygems.org/
@@ -47,6 +48,8 @@ GEM
     rubocop-rspec (1.27.0)
       rubocop (>= 0.56.0)
     ruby-progressbar (1.9.0)
+    terminal-table (1.8.0)
+      unicode-display_width (~> 1.1, >= 1.1.1)
     unicode-display_width (1.4.0)
 
 PLATFORMS
