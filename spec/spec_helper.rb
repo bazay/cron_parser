@@ -1,6 +1,5 @@
-require File.expand_path('../lib/cron_parser', __dir__)
-
 Dir[File.expand_path('support/**/*.rb', __dir__)].each { |f| require f }
+Dir[File.expand_path('../lib/**/*.rb', __dir__)].each { |f| require f }
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|

@@ -1,8 +1,8 @@
 RSpec.describe CronParser::ArgumentParser do
   subject(:parser) { described_class }
 
-  describe '.parse!' do
-    subject { -> { parser.parse!(arguments) } }
+  describe '.parse' do
+    subject { -> { parser.parse(arguments) } }
 
     let(:arguments) { [] }
 
@@ -21,7 +21,7 @@ RSpec.describe CronParser::ArgumentParser do
     end
 
     context 'when arguments contains expression option' do
-      subject { parser.parse!(arguments) }
+      subject { parser.parse(arguments) }
 
       let(:expression_argument) { '*/15 0 1,15 * 1-5 /user/bin/find' }
       let(:arguments) { [expression_option, expression_argument] }
@@ -40,7 +40,7 @@ RSpec.describe CronParser::ArgumentParser do
       end
 
       context 'with no expression argument' do
-        subject { -> { parser.parse!(arguments) } }
+        subject { -> { parser.parse(arguments) } }
 
         it_behaves_like 'short and long option showing output', 'expression', /missing argument: /
       end

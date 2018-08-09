@@ -35,31 +35,11 @@ Layout/SpaceInsideBlockBraces:
   Exclude:
     - 'Gemfile'
 
-# Offense count: 1
-Style/Documentation:
-  Exclude:
-    - 'spec/**/*'
-    - 'test/**/*'
-    - 'lib/cron_parser.rb'
-
 # Offense count: 2
 # Cop supports --auto-correct.
 Style/ExpandPathArguments:
   Exclude:
     - 'cron_parser.gemspec'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: UseHashRocketsWithSymbolValues, PreferHashRocketsForNonAlnumEndingSymbols.
-# SupportedStyles: ruby19, hash_rockets, no_mixed_keys, ruby19_no_mixed_keys
-Style/HashSyntax:
-  EnforcedStyle: hash_rockets
-
-# Offense count: 1
-# Cop supports --auto-correct.
-Style/MutableConstant:
-  Exclude:
-    - 'lib/cron_parser/version.rb'
 
 # Offense count: 19
 # Cop supports --auto-correct.
@@ -72,9 +52,3 @@ Style/StringLiterals:
     - 'cron_parser.gemspec'
     - 'lib/cron_parser.rb'
     - 'lib/cron_parser/version.rb'
-
-# Offense count: 4
-# Configuration parameters: AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
-# URISchemes: http, https
-Metrics/LineLength:
-  Max: 96

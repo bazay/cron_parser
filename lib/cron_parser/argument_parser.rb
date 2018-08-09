@@ -4,7 +4,7 @@ require 'optparse'
 module CronParser
   module ArgumentParser
     class << self
-      def parse!(arguments)
+      def parse(arguments)
         options = {}
         OptionParser.new(nil, 32, ' ' * 2) do |opts|
           opts.banner = 'Usage:'
