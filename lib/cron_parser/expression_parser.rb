@@ -13,11 +13,12 @@ module CronParser
     COMBINABLE_SPECIAL_CHARACTERS = %w[* /].freeze
 
     def initialize(expression)
-      @expression = expression.to_s
+      @expression = expression
       @parsed_expression = {}
     end
 
     def parse
+      return unless expression
       return @parsed_expression unless @parsed_expression.empty?
       raise_error! unless correct_number_of_parts?
 

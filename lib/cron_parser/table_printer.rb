@@ -8,6 +8,7 @@ module CronParser
     end
 
     def print
+      return unless @parsed_expression
       raise_error! if @parsed_expression.empty?
       build_rows
       puts table

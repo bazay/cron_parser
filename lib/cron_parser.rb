@@ -22,7 +22,7 @@ module CronParser
     end
 
     def parsed_expression
-      ::CronParser::ExpressionParser.new(parsed_arguments.dig(:expression)).parse
+      ::CronParser::ExpressionParser.new(parsed_arguments&.dig(:expression)).parse
     end
 
     def print_table!
